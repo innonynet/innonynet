@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import { themes } from "./theme";
 import HomePage from "./pages/HomePage";
 import ToolPage from "./pages/ToolPage";
+import PrivacyPage from "./pages/PrivacyPage";
 
 export default function App() {
   const [dark, setDark] = useState(true);
@@ -26,6 +27,7 @@ export default function App() {
 
       <Routes>
         <Route path="/"        element={<HomePage t={t} />} />
+        <Route path="/privacy" element={<PrivacyPage t={t} />} />
         <Route path="/:toolId" element={<ToolPage t={t} />} />
       </Routes>
     </div>

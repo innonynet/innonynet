@@ -38,7 +38,13 @@ export default function HomePage({ t }) {
       ))}
 
       <div style={{ textAlign: "center", paddingTop: "1rem", borderTop: `1px solid ${t.border}` }}>
-        <p style={{ fontSize: "0.6rem", color: t.muted }}>innonynet.com</p>
+        <p style={{ fontSize: "0.7rem", color: t.muted, marginBottom: "0.5rem" }}>innonynet.com</p>
+        <div style={{ display: "flex", justifyContent: "center", gap: "1.2rem" }}>
+          <a href="https://x.com/innonynet" target="_blank" rel="noopener noreferrer"
+            style={{ fontSize: "0.65rem", color: t.muted, textDecoration: "none" }}>𝕏 @innonynet</a>
+          <a href="/privacy"
+            style={{ fontSize: "0.65rem", color: t.muted, textDecoration: "none" }}>プライバシーポリシー</a>
+        </div>
       </div>
     </div>
   );

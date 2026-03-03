@@ -24,3 +24,22 @@ resource "azurerm_static_web_app" "swa" {
   sku_tier            = "Free"
   sku_size            = "Free"
 }
+
+# Apex domain (innonynet.com)
+# DNS: TXT record  _dnsauth.innonynet.com → validationToken (see outputs)
+# DNS: ALIAS/ANAME innonynet.com          → polite-meadow-09963ef00.1.azurestaticapps.net
+resource "azurerm_static_web_app_custom_domain" "apex" {
+  static_web_app_id = azurerm_static_web_app.swa.id
+  domain_name       = "innonynet.com"
+  validation_type   = "dns-txt-token"
+}
+
+# www subdomain (www.innonynet.com)
+# DNS: CNAME www.innonynet.com → polite-meadow-09963ef00.1.azurestaticapps.net
+resource "azurerm_static_web_app_custom_domain" "www" {
+  static_web_app_id = azurerm_static_web_app.swa.id
+  domain_name       = "www.innonynet.com"
+  validation_type   = "cname-delegation"
+
+  depends_on = [azurerm_static_web_app_custom_domain.apex]
+}

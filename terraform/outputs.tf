@@ -8,3 +8,8 @@ output "swa_api_key" {
   value       = azurerm_static_web_app.swa.api_key
   sensitive   = true
 }
+
+output "apex_validation_token" {
+  description = "TXT record value for innonynet.com — set as: _dnsauth.innonynet.com TXT <value>"
+  value       = azurerm_static_web_app_custom_domain.apex.validation_token
+}

@@ -8,6 +8,7 @@ import PomodoroTool  from "./PomodoroTool";
 import MeetingTool   from "./MeetingTool";
 import BokiTool      from "./BokiTool";
 import JobChangeTool from "./JobChangeTool";
+import MbtiTool      from "./MbtiTool";
 
 export const TOOLS = [
   { id: "fire",     label: "FIRE Calculator",  ja: "FIREシミュレーター",  tag: "投資",       color: "#f97316", desc: "積立・利回りから財務的自由までの年数を計算",       component: FireTool      },
@@ -20,6 +21,7 @@ export const TOOLS = [
   { id: "meeting",  label: "Meeting Cost",     ja: "会議コスト計算機",    tag: "生産性",     color: "#f59e0b", desc: "参加人数と時給から会議の費用を可視化",               component: MeetingTool   },
   { id: "boki",     label: "Boki Practice",    ja: "簿記練習ツール",      tag: "生産性",     color: "#7c3aed", desc: "簿記3級レベルの仕訳問題をランダム出題",             component: BokiTool      },
   { id: "job",      label: "Job Change Score", ja: "転職タイミング診断",  tag: "生産性",     color: "#ec4899", desc: "今転職すべきか？5つの指標でスコア化",               component: JobChangeTool },
+  { id: "mbti",     label: "MBTI Diagnosis",   ja: "MBTI性格診断",        tag: "生産性",     color: "#8b5cf6", desc: "16問の質問で16タイプの性格タイプを判定",            component: MbtiTool      },
 ];
 
 export const TAGS       = ["投資", "エンジニア", "生産性"];
